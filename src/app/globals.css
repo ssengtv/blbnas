@@ -13,15 +13,9 @@
   }
 }
 
-
 :root {
-  --color-primary: #FFB566;
-  --color-primary-hover: #FFA94D;
-  --color-background: #FFF6ED;
-  --color-border: #FFD8A8;
-  --color-text: #333333;
+  --foreground-rgb: 255, 255, 255;
 }
-
 
 html,
 body {
