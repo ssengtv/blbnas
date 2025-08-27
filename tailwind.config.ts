@@ -19,6 +19,10 @@ const config: Config = {
         primary: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
+      primary: '#FFB566',
+      'primary-hover': '#FFA94D',
+      'primary-bg': '#FFF6ED',
+      'primary-border': '#FFD8A8',
         primary: {
           50: '#f0f9ff',
           100: '#e0f2fe',
