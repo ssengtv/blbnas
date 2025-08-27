@@ -181,12 +181,6 @@ function LoginPageClient() {
       </div>
 
       {/* 版本信息显示 */}
-      
-      {/* 注册入口 */}
-      <div className="mt-4 text-center text-sm">
-        没有账号？
-        <a href="/register" className="underline ml-1">去注册</a>
-      </div>
       <VersionDisplay />
     </div>
   );
