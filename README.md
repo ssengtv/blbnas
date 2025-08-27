@@ -1,10 +1,10 @@
-# MoonTV
+# BlbTV
 
 <div align="center">
-  <img src="public/logo.png" alt="MoonTV Logo" width="120">
+  <img src="public/logo.png" alt="BlbTV Logo" width="120">
 </div>
 
-> 🎬 **MoonTV** 是一个开箱即用的、跨平台的影视聚合播放器。它基于 **Next.js 14** + **Tailwind&nbsp;CSS** + **TypeScript** 构建，支持多资源搜索、在线播放、收藏同步、播放记录、云端存储，让你可以随时随地畅享海量免费影视内容。
+> 🎬 **BlbTV** 是一个开箱即用的、跨平台的影视聚合播放器。它基于 **Next.js 14** + **Tailwind&nbsp;CSS** + **TypeScript** 构建，支持多资源搜索、在线播放、收藏同步、播放记录、云端存储，让你可以随时随地畅享海量免费影视内容。
 
 <div align="center">
 
@@ -71,9 +71,9 @@
 
 ```yml
 services:
-  moontv-core:
-    image: ghcr.io/moontechlab/lunatv:latest
-    container_name: moontv-core
+  BlbTV-core:
+    image: ghcr.io/ssengtv/blbnas:latest
+    container_name: BlbTV-core
     restart: on-failure
     ports:
       - '3000:3000'
@@ -81,21 +81,21 @@ services:
       - USERNAME=admin
       - PASSWORD=admin_password
       - NEXT_PUBLIC_STORAGE_TYPE=kvrocks
-      - KVROCKS_URL=redis://moontv-kvrocks:6666
+      - KVROCKS_URL=redis://BlbTV-kvrocks:6666
     networks:
-      - moontv-network
+      - BlbTV-network
     depends_on:
-      - moontv-kvrocks
-  moontv-kvrocks:
+      - BlbTV-kvrocks
+  BlbTV-kvrocks:
     image: apache/kvrocks
-    container_name: moontv-kvrocks
+    container_name: BlbTV-kvrocks
     restart: unless-stopped
     volumes:
       - kvrocks-data:/var/lib/kvrocks
     networks:
-      - moontv-network
+      - BlbTV-network
 networks:
-  moontv-network:
+  BlbTV-network:
     driver: bridge
 volumes:
   kvrocks-data:
@@ -105,9 +105,9 @@ volumes:
 
 ```yml
 services:
-  moontv-core:
-    image: ghcr.io/moontechlab/lunatv:latest
-    container_name: moontv-core
+  BlbTV-core:
+    image: ghcr.io/ssengtv/blbnas:latest
+    container_name: BlbTV-core
     restart: on-failure
     ports:
       - '3000:3000'
@@ -115,22 +115,22 @@ services:
       - USERNAME=admin
       - PASSWORD=admin_password
       - NEXT_PUBLIC_STORAGE_TYPE=redis
-      - REDIS_URL=redis://moontv-redis:6379
+      - REDIS_URL=redis://BlbTV-redis:6379
     networks:
-      - moontv-network
+      - BlbTV-network
     depends_on:
-      - moontv-redis
-  moontv-redis:
+      - BlbTV-redis
+  BlbTV-redis:
     image: redis:alpine
-    container_name: moontv-redis
+    container_name: BlbTV-redis
     restart: unless-stopped
     networks:
-      - moontv-network
+      - BlbTV-network
     # 请开启持久化，否则升级/重启后数据丢失
     volumes:
       - ./data:/data
 networks:
-  moontv-network:
+  BlbTV-network:
     driver: bridge
 ```
 
@@ -141,9 +141,9 @@ networks:
 3. 使用如下 docker compose
 ```yml
 services:
-  moontv-core:
-    image: ghcr.io/moontechlab/lunatv:latest
-    container_name: moontv-core
+  BlbTV-core:
+    image: ghcr.io/ssengtv/blbnas:latest
+    container_name: BlbTV-core
     restart: on-failure
     ports:
       - '3000:3000'
@@ -200,7 +200,7 @@ custom_category 支持的自定义分类已知如下：
 
 也可输入如 "哈利波特" 效果等同于豆瓣搜索
 
-MoonTV 支持标准的苹果 CMS V10 API 格式。
+BlbTV 支持标准的苹果 CMS V10 API 格式。
 
 ## 自动更新
 
@@ -215,7 +215,7 @@ dockge/komodo 等 docker compose UI 也有自动更新功能
 | USERNAME                            | 站长账号           | 任意字符串                       | 无默认，必填字段                                                                                                                     |
 | PASSWORD                            | 站长密码           | 任意字符串                       | 无默认，必填字段                                                                                                                     |
 | SITE_BASE                           | 站点 url              |       形如 https://example.com                  | 空                                                                                                                     |
-| NEXT_PUBLIC_SITE_NAME               | 站点名称                                     | 任意字符串                       | MoonTV                                                                                                                     |
+| NEXT_PUBLIC_SITE_NAME               | 站点名称                                     | 任意字符串                       | BlbTV                                                                                                                     |
 | ANNOUNCEMENT                        | 站点公告                                     | 任意字符串                       | 本网站仅提供影视信息搜索服务，所有内容均来自第三方网站。本站不存储任何视频资源，不对任何内容的准确性、合法性、完整性负责。 |
 | NEXT_PUBLIC_STORAGE_TYPE            | 播放记录/收藏的存储方式                      | redis、kvrocks、upstash | 无默认，必填字段                                                                                                               |
 | KVROCKS_URL                           | kvrocks 连接 url                               | 连接 url                         | 空                                                                                                                         |
@@ -275,7 +275,7 @@ NEXT_PUBLIC_DOUBAN_IMAGE_PROXY_TYPE 选项解释：
 
 ## License
 
-[MIT](LICENSE) © 2025 MoonTV & Contributors
+[MIT](LICENSE) © 2025 BlbTV & Contributors
 
 ## 致谢
 
@@ -289,4 +289,4 @@ NEXT_PUBLIC_DOUBAN_IMAGE_PROXY_TYPE 选项解释：
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=MoonTechLab/LunaTV&type=Date)](https://www.star-history.com/#MoonTechLab/LunaTV&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=ssengtv/blbnas&type=Date)](https://www.star-history.com/#ssengtv/blbnas&Date)
