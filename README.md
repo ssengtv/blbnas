@@ -72,7 +72,7 @@
 ```yml
 services:
   BlbTV-core:
-    image: ghcr.io/moontechlab/lunatv:latest
+    image: ghcr.io/ssengtv/blbnas:latest
     container_name: BlbTV-core
     restart: on-failure
     ports:
@@ -106,7 +106,7 @@ volumes:
 ```yml
 services:
   BlbTV-core:
-    image: ghcr.io/moontechlab/lunatv:latest
+    image: ghcr.io/ssengtv/blbnas:latest
     container_name: BlbTV-core
     restart: on-failure
     ports:
@@ -142,7 +142,7 @@ networks:
 ```yml
 services:
   BlbTV-core:
-    image: ghcr.io/moontechlab/lunatv:latest
+    image: ghcr.io/ssengtv/blbnas:latest
     container_name: BlbTV-core
     restart: on-failure
     ports:
@@ -289,4 +289,4 @@ NEXT_PUBLIC_DOUBAN_IMAGE_PROXY_TYPE 选项解释：
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=MoonTechLab/LunaTV&type=Date)](https://www.star-history.com/#MoonTechLab/LunaTV&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=ssengtv/blbnas&type=Date)](https://www.star-history.com/#ssengtv/blbnas&Date)
