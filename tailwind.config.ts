@@ -19,21 +19,21 @@ const config: Config = {
         primary: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-      primary: '#FFB566',
-      'primary-hover': '#FFA94D',
-      'primary-bg': '#FFF6ED',
-      'primary-border': '#FFD8A8',
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          DEFAULT: '#FFB566',  // 主色
+          hover: '#FFA94D',    // 悬停色
+          bg: '#FFF6ED',       // 背景色
+          border: '#FFD8A8',   // 边框色
+          50: '#FFF6ED',
+          100: '#FFE5C7',
+          200: '#FFD8A8',
+          300: '#FFC48A',
+          400: '#FFB566',
+          500: '#FFA94D',
+          600: '#FF9933',
+          700: '#E6802D',
+          800: '#CC6A26',
+          900: '#B3581F',
         },
         dark: '#222222',
       },
